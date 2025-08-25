@@ -13,6 +13,7 @@ def check_url_patterns(url):
         r"freeterabox\.com",
         r"www\.freeterabox\.com",
         r"1024tera\.com",
+        r"1024terabox\.com",
         r"4funbox\.co",
         r"www\.4funbox\.com",
         r"mirrobox\.com",
@@ -21,6 +22,7 @@ def check_url_patterns(url):
         r"terabox\.com",
         r"www\.terabox\.ap",
         r"www\.terabox\.com",
+        r"www\.1024terabox\.com",
         r"www\.1024tera\.co",
         r"www\.momerybox\.com",
         r"teraboxapp\.com",
@@ -160,6 +162,7 @@ def get_data(url: str):
         "sizebytes": (int(content_length) if content_length else None),
     }
     return data
+
 
 
 # print(get_data("https://1024terabox.com/s/1PYs1qH040SBgDgbvY36JNQ"))
