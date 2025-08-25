@@ -22,6 +22,7 @@ def check_url_patterns(url: str) -> bool:
         r"freeterabox\.com",
         r"www\.freeterabox\.com",
         r"1024tera\.com",
+        r"1024terabox\.com",
         r"4funbox\.co",
         r"www\.4funbox\.com",
         r"mirrobox\.com",
@@ -30,6 +31,7 @@ def check_url_patterns(url: str) -> bool:
         r"terabox\.com",
         r"www\.terabox\.ap",
         r"www\.terabox\.com",
+        r"www\.1024terabox\.com",
         r"www\.1024tera\.co",
         r"www\.momerybox\.com",
         r"teraboxapp\.com",
@@ -239,3 +241,4 @@ def download_image_to_bytesio(url: str, filename: str) -> BytesIO | None:
             return None
     except:
         return None
+
