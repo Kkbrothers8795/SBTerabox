@@ -1,37 +1,32 @@
-API_ID = 21615551  # api id
-API_HASH = "37aad99a622ec154e32daaf7b1d4d7e7"  # api hash
+import os
 
-BOT_TOKEN = "6509114049:AAHvaWskUWGFWOcOIiwR8_dABu95lrVeHX4"  # bot token
+# Load configuration values from Docker environment variables
+API_ID = int(os.environ.get("API_ID", ""))
+API_HASH = os.environ.get("API_HASH", "")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
-OWNER_ID= [5270659520]
+# Parse OWNER_ID and ADMINS safely
+OWNER_ID = [int(i) for i in os.environ.get("OWNER_ID", "").split(",") if i.strip().isdigit()]
+ADMINS = [int(i) for i in os.environ.get("ADMINS", "").split(",") if i.strip().isdigit()]
 
-## REDIS
-HOST = "redis-12986.c295.ap-southeast-1-1.ec2.cloud.redislabs.com"  # redis host uri
-PORT = "12986"  # redis port
-PASSWORD = "I023apcvNVIilboVXOvsWpDFuIdYCXSh"  # redis password
+# Redis configuration
+HOST = os.environ.get("HOST", "")
+PORT = os.environ.get("PORT", "")
+PASSWORD = os.environ.get("PASSWORD", "")
 
-CHANNEL_USERNAME= "Muthal_Gang_Reunite" # add without using "@"
+CHANNEL_USERNAME = os.environ.get("CHANNEL_USERNAME", "")   ## add without using "@"
+START_IMAGE = os.environ.get("START_IMAGE", "https://i.ibb.co/d28yPfL/960389-original-4320x7680.jpg")
+VERIFY_IMAGE = os.environ.get("VERIFY_IMAGE", "https://i.ibb.co/jw8zc5h/t3-1866t0y.jpg")
+BOT_USERNAME = os.environ.get("BOT_USERNAME", "")   ## add without using "@"
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "")  ## With @
+TUTORAL_VID_URL = os.environ.get("TUTORAL_VID_URL", "https://t.me/Muthal_Gang_Reunite/42")
 
-START_IMAGE="https://i.ibb.co/d28yPfL/960389-original-4320x7680.jpg"
+MONGO_DB_URL = os.environ.get("MONGO_DB_URL", "")
+DB_NAME = os.environ.get("DB_NAME", "")
 
-VERIFY_IMAGE="https://i.ibb.co/jw8zc5h/t3-1866t0y.jpg"
+PRIVATE_CHAT_ID = int(os.environ.get("PRIVATE_CHAT_ID", "0"))  ## CHAT WHERE YOU WANT TO STORE VIDEOS
 
-BOT_USERNAME= "Bokatora_Bot" # add without using "@"
+COOKIE = os.environ.get("COOKIE", "")
 
-ADMIN_USERNAME = "@Devil_But_Not_Evil"
-
-TUTORAL_VID_URL= "https://t.me/Muthal_Gang_Reunite/42"
-
-MONGO_DB_URL="mongodb+srv://bokatora:randi_hunter@cluster0.9uodxlo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-DB_NAME="Cluster0"
-
-PRIVATE_CHAT_ID = -1002089490097  # CHAT WHERE YOU WANT TO STORE VIDEOS
-COOKIE = "csrfToken=8VAoKUMBXrCXJ6FUat-8p6Wv; browserid=FH9ID6aDJX2ExG3hnfL0d0gxWHUMHV1dvess6sWLSloryxKU2fMuPMT25Os=; lang=en; TSID=XpNlbajvAdytLj9R0jhhgxsxrtmQvKdf; __bid_n=18f0afdefc7262861a4207; _ga=GA1.1.1675516148.1713876367; ndus=YzNfUhKteHuilLx2UFhzB_I_DZMLMI36xBe2dxFc; ndut_fmt=79FF8CC78DAD43DB725D55D5B6B71E047187C6BA3D69B108E76643FB9AF13B5D; _ga_06ZNKL8C2E=GS1.1.1713876366.1.1.1713876694.49.0.0"
-ADMINS = [5139108406,5270659520]
-
-#---------------------------------------------------------------------#
-
-SHORTNER_URL="https://publicearn.com"
-SHORTNER_API="2425c42403aa4309e3fac78878cb9a6981a6733f"
-
-#---------------------------------------------------------------------#
+SHORTNER_URL = os.environ.get("SHORTNER_URL", "")
+SHORTNER_API = os.environ.get("SHORTNER_API", "")
